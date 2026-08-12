@@ -1,6 +1,6 @@
 {
   "name": "RNERadialChart",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -10,9 +10,8 @@
   "displayName": "Radial Chart",
   "description": "Concentric ring chart: multiple rings with partial fill (0–100% per ring), blue gradient, center hole, optional center text",
   "iconUrl": "icon.svg",
-  "dependencies": {
-    "@wavemaker/react-native-echarts": "1.0.1",
-    "@shopify/react-native-skia": "2.6.2"
+  "devDependencies": {
+    "@wavemaker/react-native-echarts": "^1.1.0"
   },
   "keywords": [
     "radial",
@@ -137,12 +136,18 @@
     },
     "renderTooltip": {
       "name": "renderTooltip",
-      "displayName": "Render Tooltip",
+      "displayName": "Tooltip Content",
       "description": "Optional (params) => ReactNode for the RN tooltip body at the pointer. When set, replaces the layout chosen by tooltip. Params: ringLabel, value (fill 0–100), color, pointerX and pointerY.",
-      "type": "function",
+      "params": [
+          "ringLabel",
+          "value",
+          "color",
+          "pointerX",
+          "pointerY"
+      ],
+      "type": "content",
       "isList": false,
-      "isRequired": false,
-      "show": false
+      "isRequired": false
     },
     "width": {
       "name": "width",
